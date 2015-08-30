@@ -1,0 +1,44 @@
+== Was ist Sputnik! ? ==
+
+Sputnik! Ist ein Powertoy für OXID Admins und Entwickler. Es ermöglicht das aufsetzen von OXID Installationen in wenigen Sekunden, oder ermöglicht das problemlose kopieren von Shops auf einen anderen Server bzw. Stage Host. Auch recht große Shops sind kein Problem, da der ganze Prozess in möglichst kleine Stücke geteilt wurde.
+
+Ich habe das Tool eigentlich für den Eigenbedarf entwickelt und immer wieder genutzt, aber ich denke das auch der ein oder andere daran Freude haben wird.
+
+== Was ist Sputnik! nicht? ==
+
+Definitiv ein ist es kein Spielzeug für unerfahrene User, wer nichts mit dem Tool anzufangen weis geht am besten den normalen Weg.
+
+== Nutzung ==
+
+Sputnik! ist wirklich einfach zu nutzen, das Script wird auf den Zielserver geladen und mit http://<server>/sputnik.php aufgerufen. Das Script selbst ist keine 30 kb groß und sollte in einer Sekunde hochgeladen sein.
+
+Zur Installation von OXID ist nur die Angabe der Datenbankdaten nötig, soll ein Shop umgezogen werden ist auch das „FTP“ Tab auszufüllen. Im „Datenbank“ Tab wird grundsätzlich die Zieldatenbank angegeben.
+
+Dann einfach eine Option wählen und abwarten.
+
+== Technisches ==
+
+Sputnik! ist ein technisch spassiges Werkzeug, dass auch mit einem Augenmerk auf IT Sicherheit entwickelt wurde. Es ist in der Lage via FTP Backups von Remote Shop Datenbanken zu machen, dazu kopiert es einen Teil von sich selbst auf das Quellhosting, erstellt ein AES verschlüsseltes Backup und transferiert dieses zum Zielhost. Der AES Schlüssel für diese Aktion wird bei jeder Nutzung von Sputnik neu erstellt, sodass Backups grundsätzlich nutzlose für Dritte sind. Der Scriptname wird nach dem Aufruf automatisch geändert und die Drohne, sowie das Script selbst löschen sich nach getaner Arbeit selbst.
+
+Sollte auf dem Remote Server kein mcrypt zur Verfügung stehen, kann die Verschlüsselung der Dumps mit AES mit dem Parameter $useAES abgeschaltet werden. Das ist aber allgemein selten nötig.
+
+Da ich das Script schon einige Zeit nutze kann ich betätigen das es auch sehr gut bei Sharedhostern funktioniert. Bei einigen bekannte wie 1und1, Strato , All Inkl., 1blu, Alfahosting war es schon im Einsatz.
+
+Ich habe das Script auch schon mit einer API integriert gehabt um Datenbanken für die Installation automatisch zu erstellen, dieser Teil wurde in der Release Version aber entfernt und sollte je nach Bedarf selbst integriert werden.
+
+Der Name Sputnik! geht übrigens auf die Eigenschaft zurück, ein Teil von sich selbst auf entfernte Server replizieren zu können um dort als Drohne ausgeführt zu werden. 
+
+== Support ==
+
+Bitte stellt Supportanfragen zu dem Tool im Forum. Wem Sputnik! gefällt kann mit über den Spendenknopf gern ein paar Euro für ein Bier zukommen lassen. Ich stelle das Tool als Entwickler zur Verfügung und hoffe das es dem ein oder anderen bei der täglichen Arbeit helfen kann. Bitte habt aber auch Verständnis dafür, dass ich anders als bei den kommerziellen Modulen, kein direkten Support leisten kann. Ich werde mich aber bemühen alle Anfragen im Forum zu beantworten.
+
+== Lizenz ==
+
+Sputnik! Coypright © 2012-2013 Alexander Pick (Email: ap@pbt-media.com)
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+== Einschränkungen ==
+
+Bitte nutzt das Tool mit einem vernünftigen Browser, ich nutze fast ausschliesslich Chrome, Firefox sollte auch Ok sein, aber ob das auch alles mit dem IE so toll funktioniert kann ich nicht sagen.
